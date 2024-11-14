@@ -50,16 +50,19 @@ bool isValid(int board[9][9], int row, int column, int number){
     return true;
 }
 
-bool solve(int board[9][9]){ /// needs a condition for if not 0 increment in the outermost loops
+bool solve(int board[9][9]){ 
     for (int i = 0; i < 9; i++)
     {
         for (int j = 0; j < 9; j++)
         {
-            if (board[i][j] == 0){
+            if(board[i][j] !=0){
+                continue;
+            }
+            else if (board[i][j] == 0){
                 for (int candidate = 1; candidate < 10; candidate++)
                 {
-                    board[i][j] = candidate;
                     if (isValid(board, i, j, candidate) == true){
+                        board[i][j] = candidate;
                         if(solve(board) == true){
                             return true;
                         }
@@ -72,6 +75,7 @@ bool solve(int board[9][9]){ /// needs a condition for if not 0 increment in the
             }
         } 
     } 
+    printBoard(board);
     return true;
 }
 
@@ -92,7 +96,7 @@ int main(){
     printBoard(board);
 
     cout << "Solved board: " << endl;
-    cout << solve(board);
-    
+    solve(board);
+
     return 0;
 }
