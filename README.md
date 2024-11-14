@@ -1,1 +1,1 @@
-sudoku solver project utilising boolean cases and recursion
+sudoku solver project
