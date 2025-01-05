@@ -1,3 +1,3 @@
 # sudoku-solver
 
-sudoku solver created using recursive backtracking function 
+Sudoku solver created using a recursive backtracking algorithm
